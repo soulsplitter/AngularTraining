@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<input id=toonStedenCheckbox type="checkbox" (change)="toggleCities()"> {{toggleMsg}}
+<ul class="list-group" *ngIf="showCities">
+  <li class="list-group-item" *ngFor="let city of cities">
+    {{city.id}} - {{city.name}} ({{city.province}})
+  </li>
+</ul>
+<button id=bestelknop (click)="btnClick()">Bestel</button>
+<h2 *ngIf="cities.length > 3">Jij hebt veel favoriete steden!</h2>
+<h2 *ngIf="cities.length <= 3">Jij hebt niet veel favoriete steden!</h2>
