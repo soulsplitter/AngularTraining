@@ -2,6 +2,17 @@
     background-color: blue;
 }
 #bestelknop{
-    background-color: chartreuse;
-
+    background-color: rgb(36, 167, 190);
 }
+#toevoegenStad{
+    background-color: royalblue;
+}
+#toverknop{
+    background-color: purple;
+    font-weight: bold;
+    color: white;
+}
+#verstopteLetters{
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+  }

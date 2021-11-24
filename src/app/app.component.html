@@ -1,10 +1,27 @@
 <h1>{{title}}</h1>
 <input id=toonStedenCheckbox type="checkbox" (change)="toggleCities()"> {{toggleMsg}}
 <ul class="list-group" *ngIf="showCities">
-  <li class="list-group-item" *ngFor="let city of cities">
+  <li class="list-group-item" *ngFor="let city of cities" (click)="showCity(city)">
     {{city.id}} - {{city.name}} ({{city.province}})
   </li>
 </ul>
+<div>
+  <input type="text" class="input-lg" 
+  placeholder="Nieuwe Stad..." 
+  #txtCity 
+  (keyup.enter)="addCity(txtCity.value)"><br />
+  <h2>{{ newCity }}</h2>
+</div>
+<div *ngIf="currentCity">
+  <img [src]="cityPhoto" [alt]="currentCity.name" class="cityPhoto">
+  <h2> Gekozen stad: {{ currentCity.name }}</h2>
+</div>
+<button id=toevoegenStad class="btn btn-succes"
+  (click)="addCity(txtCity.value)">Toevoegen</button>
 <button id=bestelknop (click)="btnClick()">Bestel</button>
-<h2 *ngIf="cities.length > 3">Jij hebt veel favoriete steden!</h2>
-<h2 *ngIf="cities.length <= 3">Jij hebt niet veel favoriete steden!</h2>
+<h2 *ngIf="cities.length > 5">Jij hebt veel favoriete steden!</h2>
+<h2 *ngIf="cities.length <= 5">Jij hebt niet veel favoriete steden!</h2>
+<button id= toverknop class="btn btn-succes"
+(click)="toggleText()">
+Toggle onderstaande text </button>
+<h2 id=verstopteLetters [hidden]="textVisible">Deze tekst is zichtbaar of onzichtbaar.</h2>
