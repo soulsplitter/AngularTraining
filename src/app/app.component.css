@@ -1,11 +1,16 @@
-.list-group {
+#heleTabel {
     background-color: blue;
+    border: fuchsia;
+    margin-left: 2.5em;
+       
 }
 #bestelknop{
     background-color: rgb(36, 167, 190);
-}
+    margin-left: 1cm
+ }
 #toevoegenStad{
     background-color: royalblue;
+    margin-bottom: 2.5em;
 }
 #toverknop{
     background-color: purple;
