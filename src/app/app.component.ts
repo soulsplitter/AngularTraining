@@ -12,9 +12,9 @@ export class AppComponent implements OnInit {
   cities: City[];
   toggleMsg: string = 'Verberg lijst met steden.';
   newCity: string = '';
-  textVisible:boolean = true;
-  currentCity:City;
-  cityPhoto:string = '';
+  textVisible: boolean = true;
+  currentCity: City;
+  cityPhoto: string = '';
 
   ngOnInit() {
     this.title = 'Mijn favoriete steden via Model'
@@ -45,12 +45,12 @@ export class AppComponent implements OnInit {
   changeCity(value: string) {
     this.newCity = value;
   }
-  addCity(value:string){
+  addCity(value: string) {
     let addedCity = new City(
-      this.cities.length +1, // id
+      this.cities.length + 1, // id
       value,        //naam
       'Onbekend');  //provincie
-      this.cities.push(addedCity);
+    this.cities.push(addedCity)
   }
   toggleText() {
     this.textVisible = !this.textVisible;
